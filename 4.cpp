@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+//Queue FIFO 
 class Node{
     public:
     int data;
@@ -9,7 +9,7 @@ class Node{
     Node *next;
     Node(int data){
         this->data = data;
-        this->nextnext = NULL;
+        this->next = NULL;
         this->prev = NULL;
     }
 };
@@ -38,6 +38,7 @@ class Queue{
             tail->prev = nn;
             tail = nn;
         }
+        sz++;
     }
     void pop(){
         if (front !=NULL){
@@ -60,6 +61,10 @@ int main(){
     Queue *queue = new Queue();
     queue->push(10);
     queue->push(20);
-    queue->
+    queue->push(30); 
+    queue->pop();
+
+    cout << queue->front->data << endl;
+    cout << queue->tail->data  << endl;
     return 0;
 }

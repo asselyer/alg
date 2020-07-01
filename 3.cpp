@@ -21,10 +21,11 @@ class Stack {
         top = NULL;
         sz = 0;
     }
-    void puch(int data){
+    void push(int data){
         Node *newN = new Node(data);
         newN->next = top;
         top = newN;
+        //top=bdo
         sz++;
     }
     void pop(){
@@ -44,18 +45,19 @@ class Stack {
     Node *topElement(){
         return top;
     }
-    int main(){
-        Stack *st = newStack();
-        st->push(10);
-        st->push(20);
-        st->push(5);
-        st->push(12);
-        st->pop();
-        st()->pop();
-        cout << st->top->next->data << endl;
-        cout << st->size() << endl;
-        cout << st-> empty();
-
-        return 0;
-    }
 };
+int main(){
+    Stack *st = new Stack();
+    st->push(10);
+    st->push(20);
+    st->push(5);
+    st->push(12);
+    st->pop();
+    st->pop();
+    cout << st->top->next->data << endl;
+    cout << st->size() << endl;
+    cout << st-> empty();
+
+    return 0;
+}
+
