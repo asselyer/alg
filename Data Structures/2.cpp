@@ -17,7 +17,7 @@ class Node {
 int main(){
     Node *node1 = new Node(10);
     Node *node2 = new Node(20);
-    Node *node3 = new Node(20);
+    Node *node3 = new Node(30);
     // cout<<node1<<endl;
     // cout<<node2<<endl;
     // cout<<node3<<endl;

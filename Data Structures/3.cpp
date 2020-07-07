@@ -27,6 +27,7 @@ class Stack {
         top = newN;
         //top=bdo
         sz++;
+        cout<<"ok"<<endl;
     }
     void pop(){
         if(top!=NULL){
@@ -48,15 +49,16 @@ class Stack {
 };
 int main(){
     Stack *st = new Stack();
+    cout<<st->size()<<endl;
     st->push(10);
+    cout<<st->size()<<endl;
     st->push(20);
+    cout<<st->size()<<endl;
     st->push(5);
-    st->push(12);
-    st->pop();
-    st->pop();
-    cout << st->top->next->data << endl;
-    cout << st->size() << endl;
-    cout << st-> empty();
+    cout<<st->size()<<endl;
+    // cout << st->top->next->data<<endl ;
+    // cout << st->size() << endl;
+    // cout << st-> empty();
 
     return 0;
 }

@@ -96,11 +96,30 @@ class LinkedList {
         }
     }
 
-    Node *find(int data) {
-        return NULL;
+    void find(int data) {
+        Node *p=front;
+        do{
+            if(front->data==data){
+                cout<<p<<" "<<front->data<<endl;
+                break;
+            }
+            p=p->next;
+            cout<<"no match";
+        }
+        while(front->next!=NULL);
+
     }
 };
 
 int main() {
+    LinkedList *ll = new LinkedList();
+    Node *a1 = new Node(10);
+    Node *c1 = new Node(14);
+    ll->pushFront(10);
+    ll->pushFront(15);
+    ll->push(a1,c1);
+    ll->pushFront(20);
+    ll->find(20);
+    //cout<<ll->tail->next->next->data << endl;
     return 0;
 }
