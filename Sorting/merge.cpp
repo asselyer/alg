@@ -5,38 +5,37 @@ int a[1000];
 void merge(int l, int m, int r){
     int L[1000];
     int R[1000];
-    int i1 = 1+m-l;
-    int i2 = r-m;
-    L[i1];
-    R[i2];
-    for(int i=0;i<i1;i++){
+    int i1=0;
+    int i2=0;
+
+    for(int i=0;i<m-l+1;i++){
         L[i]=a[l+i];
     }
-    for(int j=0;j<i2;j++){
-        R[j]=a[j+m+1];
+    for(int j=0;j<=r-m;j++){
+        R[j]=a[j+1+m];
     }
-
+    
     int p=l;
-    int i=0,j=0;
-    while(i<i1 && i2>j){
-        if(L[i]<=R[j]){
-            a[p]=L[i];
-            i++;
+
+    while(i1<(m-l+1) && i2<(r-m)){
+        if(L[i1]<=R[i2]){
+            a[p]=L[i1];
+            i1++;
         }
         else{
-            a[p]=R[j];
-            j++;
+            a[p]=R[i2];
+            i2++;
         }
         p++;
     }
-    while(i<i1){
-        a[p]=L[i];
-        i++;
+    while(i1<(m-l+1)){
+        a[p]=L[i1];
+        i1++;
         p++;
     }
-    while(j<i2){
-        a[p]=R[j];
-        j++;
+    while(i2<(r-m)){
+        a[p]=R[i2];
+        i2++;
         p++;
     }
 }
@@ -58,7 +57,7 @@ int main(){
     }
     
     msort(0,n-1);
-    for(int i =0;i<n;i++){
+    for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
     }
     cout<<endl;
